@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Skipping Ads on YouTube",
+  "version": "1.0.0",
+  "description": "Tự động bỏ qua quảng cáo trên youtube một cách nhanh chóng và hiệu quả.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["inject.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
