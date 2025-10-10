@@ -1,5 +1,6 @@
 (function () {
-    if (!location.href.startsWith("https://www.youtube.com/watch")) return;
+    console.log("HADESKER: YouTube Ad Skipper injected");
+    if (!location.href.startsWith("https://www.youtube.com/")) return;
 
     const TARGET_RATE = 16;
     const DEBOUNCE_MS = 200; // thời gian chờ giữa các lần gọi thực sự
