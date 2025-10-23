@@ -46,15 +46,14 @@
         const video = document.querySelector("div.ad-showing video");
         if (!video) return;
 
-        video.currentTime = 999999;
-        showToast(`HADESKER: Đã bỏ qua quảng cáo lần: ${++skipAds.count}`);
+        if (video.playbackRate === TARGET_RATE) return;
 
-        // if (video.playbackRate !== TARGET_RATE) {
-        //     video.playbackRate = TARGET_RATE;
-        // }
-        // if (video.defaultPlaybackRate !== TARGET_RATE) {
-        //     video.defaultPlaybackRate = TARGET_RATE;
-        // }
+        //video.currentTime = 999999; // Nếu sử dụng cách này thì bị yt cảnh báo vi phạm chính sách
+
+        video.playbackRate = TARGET_RATE;
+        video.defaultPlaybackRate = TARGET_RATE;
+
+        showToast(`HADESKER: Đã bỏ qua quảng cáo lần: ${++skipAds.count}`);
     }
 
     function debounceSetAdVideoRate() {
