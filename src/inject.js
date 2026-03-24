@@ -2,7 +2,7 @@
     console.log("HADESKER: YouTube Ad Skipper injected");
     if (!location.href.startsWith("https://www.youtube.com/")) return;
 
-    const TARGET_RATE = 16;
+    const TARGET_RATE = 10;
     const DEBOUNCE_MS = 200; // thời gian chờ giữa các lần gọi thực sự
     const skipAds = {
         count: 0,
@@ -33,9 +33,11 @@
         }
         toast.textContent = message;
         toast.style.opacity = "1";
+        toast.style.display = "block";
         clearTimeout(toast._hideTimer);
         toast._hideTimer = setTimeout(() => {
             toast.style.opacity = "0";
+            toast.style.display = 'none';
         }, 4000);
     }
 
